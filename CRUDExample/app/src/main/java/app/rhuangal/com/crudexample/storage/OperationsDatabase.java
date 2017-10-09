@@ -130,17 +130,16 @@ public class OperationsDatabase {
         return lista;
     }
 
-    public List<Persona> getAllEmployees() {
+    public List<Persona> getAllPersona2() {
         String sql= "SELECT  * FROM " + DatabaseHelper.TABLE_PERSONA;
         Cursor cursor = database.rawQuery(sql, null);
-        List<Persona> employees = new ArrayList<>();
+        List<Persona> personas = new ArrayList<>();
         if(cursor.getCount() > 0){
             while(cursor.moveToNext()){
-                employees.add(cursorToPersona(cursor));
+                personas.add(cursorToPersona(cursor));
             }
         }
-        // return All Employees
-        return employees;
+        return personas;
     }
 
     public int getPersonaCount()
