@@ -49,11 +49,11 @@ public class ListaActivity extends AppCompatActivity {
     private void loadData() {
         operations= new OperationsDatabase(DatabaseHelper.getInstance(this));
         listaPersona = operations.getAllPersona();
-        personaAdapter=  new PersonaAdapter(this,listaPersona);
-        lvPersonas.setAdapter(personaAdapter);
         if(listaPersona.size() == 0){
             populate();
         }
+        personaAdapter=  new PersonaAdapter(this,listaPersona);
+        lvPersonas.setAdapter(personaAdapter);
     }
 
     private void populate() {
